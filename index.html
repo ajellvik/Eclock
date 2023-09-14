@@ -28,14 +28,14 @@
 
     <script>
         let earnings = 0;
-        let increment = 0.003;
+        let increment = 0.00005;
         let intervalId = null;
 
         function startEarning() {
             intervalId = setInterval(() => {
                 earnings += increment;
                 document.getElementById('earnings').textContent = `$${earnings.toFixed(3)}`;
-            }, 30000); // 30 seconds in milliseconds
+            }, 100); // 30 seconds in milliseconds
         }
 
         function resetEarnings() {
