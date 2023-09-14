@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dollar Earning Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        #earnings {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dollar Earning Tracker</h1>
+        <p>Earnings: <span id="earnings">$0.000</span></p>
+        <button onclick="startEarning()">Start Earning</button>
+        <button onclick="resetEarnings()">Reset</button>
+        <button onclick="stopEarning()">Stop Earning</button>
+    </div>
+
+    <script>
+        let earnings = 0;
+        let increment = 0.003;
+        let intervalId = null;
+
+        function startEarning() {
+            intervalId = setInterval(() => {
+                earnings += increment;
+                document.getElementById('earnings').textContent = `$${earnings.toFixed(3)}`;
+            }, 30000); // 30 seconds in milliseconds
+        }
+
+        function resetEarnings() {
+            earnings = 0;
+            document.getElementById('earnings').textContent = `$${earnings.toFixed(3)}`;
+        }
+
+        function stopEarning() {
+            clearInterval(intervalId);
+        }
+    </script>
+</body>
+</html>
