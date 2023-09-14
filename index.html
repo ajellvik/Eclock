@@ -34,7 +34,7 @@
         function startEarning() {
             intervalId = setInterval(() => {
                 earnings += increment;
-                document.getElementById('earnings').textContent = `$${earnings.toFixed(3)}`;
+                document.getElementById('earnings').textContent = `$${earnings.toFixed(4)}`;
             }, 100); // 30 seconds in milliseconds
         }
 
