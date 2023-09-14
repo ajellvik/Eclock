@@ -28,19 +28,19 @@
 
     <script>
         let earnings = 0;
-        let increment = 0.00005; // Adjust the precision by changing this value
+        let increment = 0.00005;
         let intervalId = null;
 
         function startEarning() {
             intervalId = setInterval(() => {
                 earnings += increment;
-                document.getElementById('earnings').textContent = `$${earnings.toFixed(5)}`;
+                document.getElementById('earnings').textContent = `$${earnings.toFixed(4)}`;
             }, 100); // 30 seconds in milliseconds
         }
 
         function resetEarnings() {
             earnings = 0;
-            document.getElementById('earnings').textContent = `$${earnings.toFixed(5)}`;
+            document.getElementById('earnings').textContent = `$${earnings.toFixed(4)}`;
         }
 
         function stopEarning() {
