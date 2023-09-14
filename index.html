@@ -20,7 +20,7 @@
 <body>
     <div class="container">
         <h1>Dollar Earning Tracker</h1>
-        <p>Earnings: <span id="earnings">$0.000</span></p>
+        <p>Earnings: <span id="earnings">$0.00000</span></p>
         <button onclick="startEarning()">Start Earning</button>
         <button onclick="resetEarnings()">Reset</button>
         <button onclick="stopEarning()">Stop Earning</button>
@@ -28,19 +28,19 @@
 
     <script>
         let earnings = 0;
-        let increment = 0.00005;
+        let increment = 0.00005; // Adjust the precision by changing this value
         let intervalId = null;
 
         function startEarning() {
             intervalId = setInterval(() => {
                 earnings += increment;
-                document.getElementById('earnings').textContent = `$${earnings.toFixed(4)}`;
+                document.getElementById('earnings').textContent = `$${earnings.toFixed(5)}`;
             }, 100); // 30 seconds in milliseconds
         }
 
         function resetEarnings() {
             earnings = 0;
-            document.getElementById('earnings').textContent = `$${earnings.toFixed(4)}`;
+            document.getElementById('earnings').textContent = `$${earnings.toFixed(5)}`;
         }
 
         function stopEarning() {
